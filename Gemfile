@@ -7,6 +7,7 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
 gem 'bcrypt' #パスワードをハッシュ化するgem
+gem 'rails-i18n' #日本語化用gem
 gem 'bootstrap-sass'
 gem 'sqlite3'
 # Use Puma as the app server

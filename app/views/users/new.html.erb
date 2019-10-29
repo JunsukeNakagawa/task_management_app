@@ -3,19 +3,21 @@
 </div>
 
 <div class="sign_up_menu">
-  <p class="name">名前</p>
-  <div style="border:2px solid #ccc; height:30px; margin-bottom: 10px; border-radius: 4px;"></div>
+  <%= form_with(model: @user, local: true) do |f| %>
+  <%= render 'shared/error_messages' %>
   
-  <p class="mail">メールアドレス</p>
-  <div style="border:2px solid #ccc; height:30px; margin-bottom: 10px; border-radius: 4px;"></div>
-  
+    <%= f.label :name, class: "label-signup" %>
+    <%= f.text_field :name, class: "form-control" %>
 
-  <p class="password">パスワード</p>
-  <div style="border:2px solid #ccc; height:30px; margin-bottom: 10px; border-radius: 4px;"></div>
-  
-  <p class="password_confirmation">パスワード(確認用)</p>
-  <div style="border:2px solid #ccc; height:30px; margin-bottom: 30px; border-radius: 4px;"></div>  
-  
-  <%= link_to "新規作成", '#', class: "btn btn-block btn-primary" %>
-  
+    <%= f.label :email, class: "label-signup" %>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :password, class: "label-signup" %>
+    <%= f.password_field :password, class: "form-control" %>
+
+    <%= f.label :password_confirmation, class: "label-signup" %>
+    <%= f.password_field :password_confirmation, class: "form-control" %>
+
+    <%= f.submit "新規作成", class: "btn btn-primary btn-block btn-signup" %>
+  <% end %>
 </div>
